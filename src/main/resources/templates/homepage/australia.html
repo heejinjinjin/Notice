@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      var $ = jQuery.noConflict(true);
+      $(document).ready(function() {
+        $("#toggleAnimalsButton").on("click", function() {
+          $(".animal_list").toggle();
+        });
+      });
+    </script>
+    <style>
+        body{
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        nav{ text-align: center;}
+        .menu {
+        font-weight: bold;
+         display: inline;
+         margin: 5%;
+        }
+        nav a:hover{
+            color: gray;
+        } 
+        header{
+        text-align: center;
+        background-image: url(/assets/img/animal.png);
+        height: 200px;
+        }
+        header > h1{
+            margin-top: 100px;
+            width: 100%;
+        }
+        a{
+        color: black;
+        text-decoration:none;
+        }
+        img {
+            width: 862px;
+            margin-left: 50px;
+            max-width: 100%;
+            height: auto;
+            margin-left: 100px;
+        }
+        footer{
+          background-color: rgb(236, 236, 236);
+          font-size: 13px;
+          background-repeat: no-repeat;
+          padding-left: 10%;
+        }
+        h2{
+            margin-left:50px;
+        }
+        h4{
+            margin-left:70px;
+        }
+        article > p{
+            margin-left: 70px;
+        }
+        h5{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 5px solid black;
+            padding: 5px;
+            background-color: white;
+        }
+        .search{
+          text-align: right;
+        }
+     </style>
+</head>
+<body>
+<header>
+    <h1><a th:href="@{/homepage/zoo}">폴리텍 공원</a></h1>
+</header>
+<hr>
+<nav>
+    <ul>
+        <li class="menu"><a th:href="@{/homepage/africa}">아프리카</a></li>
+        <li class="menu"><a th:href="@{/homepage/na}">북아메리카</a></li>
+        <li class="menu"><a th:href="@{/homepage/sa}">남아메리카</a></li>
+        <li class="menu"><a th:href="@{/homepage/australia}">오스트레일리아</a></li>
+        <li class="menu"><a th:href="@{/notice/list}">공지사항</a></li>
+    </ul>
+</nav>
+    <hr>
+    <section>
+        <article>
+            <h2>오스트레일리아 동물 소개</h2>
+            <img src="/assets/img/aus.jpg">
+            <p>오스트레일리아 대륙은 독특하고 다양한 동물들로 알려져 있습니다. 
+                예를 들면 캥거루, 왈라비, 오스트레일리아 원숭이, 이구아나, 플라트누스 등이 있습니다. 
+                특히 오스트레일리아는 독특한 포유류와 파충류의 서식지로 알려져 있습니다.</p>
+        <hr>
+        </article>
+        <article>
+            <h2>남아메리카 대표 동물</h2>
+            <button id="toggleAnimalsButton">목록 보기▼</button>
+            <div class="animal_list" style="display: none;">
+            <h4>캥거루 (Kangaroo)</h4>
+            <img src="/assets/img/aus-kang.jpg">
+            <h4>크로커다일 (Crocodile)</h4>
+            <img src="/assets/img/aus-cro.jpg">
+            <h4>쿼카 (Quokka)</h4>
+            <img src="/assets/img/aus-quo.jpg">
+            <h4>코알라 (Koala)</h4>
+            <img src="/assets/img/aus-koal.jpg">
+            <h4>오리너구리 (Platypus)</h4>
+            <img src="/assets/img/aus-pla.jpg">
+        </article>
+    </section>
+    
+    <h5><a href="#top">TOP▲</a></h5>
+    <hr>
+    <footer>
+        <p>위치: 서울특별시 용산구 보광동 제 2공학관 5층</p>
+        <p>대표전화: 010-9139-6785</p>
+        <p>Copyright © 폴리텍공원</p>
+    </footer>
+</body>
+</html>
